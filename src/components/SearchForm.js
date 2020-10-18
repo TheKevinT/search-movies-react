@@ -14,6 +14,7 @@ export class SearchForm extends Component{
         this.setState({ inputMovie: e.target.value })
 
     }
+    
     _handleSubmit = (e) => {
         e.preventDefault();
         //realizar petición al servicio web
