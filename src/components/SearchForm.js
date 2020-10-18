@@ -24,7 +24,8 @@ export class SearchForm extends Component{
             .then(res => res.json())
             .then(results => {
                 //console.log(results);
-                const { Search, totalResults } = results
+                // Search=[] y totalResults = '0' para corregir el error de recibir un valor undefined de la 
+                const { Search = [], totalResults = '0' } = results
                 console.log({Search, totalResults})
                 this.props.onResults(Search)
 
