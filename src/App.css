@@ -20,6 +20,9 @@
 p{
    color: white;
  }
+ small{
+  color: white;
+ }
  /*CONTENIDO*/
  .MoviesList{
    display: flex;
