@@ -1,5 +1,9 @@
 import React, { Component, Fragment } from 'react'
 
+
+const API_KEY = 'd26e141f'
+
+
 export class SearchForm extends Component{
 
     state ={
@@ -12,7 +16,18 @@ export class SearchForm extends Component{
     }
     _handleSubmit = (e) => {
         e.preventDefault();
-        alert(this.state.inputMovie)
+        //realizar petición al servicio web
+        const { inputMovie } = this.state
+
+        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${inputMovie}`)
+            .then(res => res.json())
+            .then(results => {
+                //console.log(results);
+                const { Search, totalResults } = results
+                console.log({Search, totalResults})
+                this.props.onResults(Search)
+
+            })
 
     }
 
