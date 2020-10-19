@@ -27,7 +27,7 @@ class App extends Component {
     return (
       <div className="App">
   
-        <Title>Search Movies</Title>
+        <Title>SEARCH MOVIES</Title>
         {/* se crea una clase para dar estilo, para que de esta manera se reutilizable*/}
         <div className="SearchForm-wrapper">
             <SearchForm onResults={this._handleResults}/>
