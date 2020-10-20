@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
+import { ButtonBackToHome } from '../components/ButtonBackToHome'
 
 const API_KEY = 'd26e141f'
 
@@ -36,9 +37,6 @@ export class Detail extends Component{
         this._fetchMovie({ id })
 
     }
-    _goBack(){
-        window.history.back()
-    }
 
     render(){
 
@@ -47,8 +45,7 @@ export class Detail extends Component{
 
             <Fragment>
                 <div>
-                    
-                    <button className="button is-primary is-outlined" onClick={this._goBack}>Back</button>
+                    <ButtonBackToHome/>
                     <h1 style={{color:'white', marginTop:'50px'}} className='title is-4'>Title: {Title}</h1>
                     <img src={Poster} alt={Title}/>
                     <div  className="container is-max-desktop">

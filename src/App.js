@@ -8,6 +8,7 @@ import { Home } from './pages/Home';
 
 //importar ruta
 import {Switch, Route } from 'react-router-dom'
+import { NotFound } from './pages/NotFound';
 
 class App extends Component {
 
@@ -17,7 +18,7 @@ class App extends Component {
           <Switch>
             <Route exact path= '/' component={Home}/>
             <Route path= '/detail/:id' component={Detail}/>
-
+            <Route component={NotFound}/>
           </Switch>
       </div>
     );
