@@ -6,18 +6,19 @@ import 'bulma/css/bulma.css'
 import { Detail } from './pages/Detail';
 import { Home } from './pages/Home';
 
+//importar ruta
+import {Switch, Route } from 'react-router-dom'
+
 class App extends Component {
 
   render(){
-    //utilizar API nativa de javascript para manejar la URL o crear un enrutador
-    const url = new URL(document.location) //dirección actual de la pagina
-    const Page = url.searchParams.has('id') //si la ruta tiene un id
-      ? <Detail id={url.searchParams.get('id')} />
-      : <Home />
-
     return (
       <div className="App">
-        { Page }
+          <Switch>
+            <Route exact path= '/' component={Home}/>
+            <Route path= '/detail/:id' component={Detail}/>
+
+          </Switch>
       </div>
     );
   }
